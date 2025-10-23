@@ -48,7 +48,26 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  scrollbar-width: thin;
+  scrollbar-color: #4ab7ae #4ab7ae00;
 }
+
+
+/* для Chrome/Edge/Safari */
+body::-webkit-scrollbar {
+  height: 2rem;
+  width: .5rem;
+}
+body::-webkit-scrollbar-track {
+  background: #fff00;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #4ab7ae;
+  border-radius: 5px;
+  border: 0px solid #00000000;
+}
+
+
 
 * {
   box-sizing: border-box;

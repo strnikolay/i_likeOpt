@@ -13,7 +13,7 @@
             transition: opacity .5s ease-in-out;
   */
 }
-  .background {
+  .popup-background {
     position: fixed;
     z-index: 10;
     width: 100vw;
@@ -21,7 +21,7 @@
     background-color: #000000cb;
   }
 
-  .divshadow {
+.login-wrapper  .divshadow {
     width: 40rem;
     opacity: 1;
     position: absolute;

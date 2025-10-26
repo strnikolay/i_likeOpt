@@ -10,6 +10,12 @@ class productstore {
     makeAutoObservable(this);
   }
 
+  popupCardId:string = "" 
+  setPopupCardId(id:string){
+    this.popupCardId = id
+  }
+
+
   selectedCategory: number|undefined = undefined
   setSelectedCategory(cat:number|undefined){this.selectedCategory = cat}
 
@@ -23,12 +29,8 @@ class productstore {
     } else {
       this.SetProductFiltredByCategory(mockdata)
     }
-    this.setSelectedCategory(param) 
+    //this.setSelectedCategory(param) 
   }
-
-
-
-
 
   get brandsList () {
     const tempBrandArr:number[] = []
@@ -62,6 +64,7 @@ class productstore {
   }
 
   FiltredByBrand (param:number[]) {
+    //console.log(param)
     if(param.length>0){
       const templist:IProduct[] = [] 
       this.ProductFiltredByCategory.forEach((el)=> {
@@ -82,16 +85,18 @@ class productstore {
 
 
   get sizesList () {
+    //console.log(22)
     const tempSizesArr:number[] = []
-
+    //console.log(this.ProductFiltredByBrand)
     this.ProductFiltredByBrand.forEach((el)=>{
       el.sizes?.forEach((sizes)=>{
         //console.log(size)
         tempSizesArr.push(sizes.size)
       })
     })
-    const clearSize = [...new Set(tempSizesArr)] 
-    return clearSize
+    const clearSize = [...new Set(tempSizesArr)]
+
+    return clearSize.sort()
   }
 
   SelectedSizes:number[] = []
@@ -117,35 +122,63 @@ class productstore {
 
   FiltredBySizes (param:number[]) {
     if(param.length>0){
-      const templist:IProduct[] = [] 
+      const templist:string[] = [] 
       this.ProductFiltredByBrand.forEach((el)=> {
         param.forEach((par)=> {
           el.sizes.forEach((sizes)=>{
             if(sizes.size === par){
-              templist.push(el)
+              templist.push(el.id)
             }
           })
           
         })
       })
-      //console.log(templist)
-      this.SetProductFiltredBySizes(templist)
+      const clearList = [...new Set(templist)]
+      const clearDoubleArr:IProduct[] = []
+      clearList.forEach((tempEl) =>{
+        const El = mockdata.find((el:IProduct)=>el.id===tempEl)
+        if(El)clearDoubleArr.push(El)      
+      })
+
+      this.SetProductFiltredBySizes(clearDoubleArr)
     } else {
       this.SetProductFiltredBySizes(this.ProductFiltredByBrand)
     }
   }
 
+
+
+
+
+
+
   get colorsList () {
+    //console.log(this.productFiltredBySizes)
     const tempColorsArr:number[] = []
     this.productFiltredBySizes.forEach((el)=>{
+      //console.log(el.sizes)
       el.sizes?.forEach((sizes)=>{
-        sizes.colors.forEach((color)=>{
-          tempColorsArr.push(color)
-        })
+        //console.log(this.SelectedSizes)
+        if(this.SelectedSizes.length>0){
+          this.SelectedSizes.forEach((size)=>{
+            if(sizes.size===size){
+              sizes.colors.forEach((color)=>{
+                tempColorsArr.push(color)
+              })
+            }
+          })
+        } else {
+          sizes.colors.forEach((color)=>{
+            tempColorsArr.push(color)
+          })
+        }       
       })
     })
-    const clearSize = [...new Set(tempColorsArr)] 
-    return clearSize
+
+    const clearColor = [...new Set(tempColorsArr)] 
+    //console.log(clearColor)
+    //console.log(clearColor.sort())
+    return clearColor.sort()
   }
 
   SelectedColors:number[] = []
@@ -157,10 +190,10 @@ class productstore {
   ) => {
         let arr = []
         if(e.target.checked){
-            arr = [el, ...this.SelectedSizes]
+            arr = [el, ...this.SelectedColors]
             this.setSelectedColors(arr)
         } else if(!e.target.checked){
-            this.setSelectedColors(this.SelectedSizes.filter((a)=> a !== el));
+            this.setSelectedColors(this.SelectedColors.filter((a)=> a !== el));
         }
   }
 
@@ -172,22 +205,42 @@ class productstore {
 
   FiltredByColors (param:number[]) {
     if(param.length>0){
-      const templist:IProduct[] = [] 
+      const templist:string[] = [] 
       this.productFiltredBySizes.forEach((el)=> {
-        param.forEach((par)=> {
-          el.sizes.forEach((sizes)=>{
-            sizes.colors.forEach((color)=>{
-              if(color === par){
-                templist.push(el)
-              }
+        el.sizes.forEach((size)=>{
+          if(this.SelectedSizes.length>0&&this.SelectedSizes.includes(size.size)){
+            size.colors.forEach((color)=>{
+              param.forEach((par)=> {
+                if(color === par){
+                  templist.push(el.id)               
+                }
+              })
             })
+
+          } else {
+            size.colors.forEach((color)=>{
+              param.forEach((par)=> {
+                if(color === par){
+                  templist.push(el.id)               
+                }
+              })
+            }) 
+          }
+
             
-          })
-          
         })
+          
       })
+      
       //console.log(templist)
-      this.SetProductFiltredByColors(templist)
+      const clearList = [...new Set(templist)]
+      //console.log(clearList)
+      const clearDoubleArr:IProduct[] = []
+      clearList.forEach((tempEl) =>{
+        const El = mockdata.find((el:IProduct)=>el.id===tempEl)
+        if(El)clearDoubleArr.push(El)      
+      })
+      this.SetProductFiltredByColors(clearDoubleArr)
     } else {
       this.SetProductFiltredByColors(this.productFiltredBySizes)
     }

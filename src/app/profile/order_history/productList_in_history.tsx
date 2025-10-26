@@ -14,7 +14,7 @@ import { Cart_item_in_history } from "./cart_item_in_history";
 export const ProductList_in_History:FC = observer(() => {
   const {Store, Cart_Store} = useStore();
   const [cartList, setCartList] = useState<Array<IProduct>>([])
-  const [summ, setSumm] = useState<number>(0)
+  //const [summ, setSumm] = useState<number>(0)
  
   useEffect(()=>{
       const tempArr:IProduct[] = []

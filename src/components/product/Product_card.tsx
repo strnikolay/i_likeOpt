@@ -17,13 +17,13 @@ interface Props {
 
 
 const Product_card:FC<Props> = observer(({el, index}) => {
-    const {Store, Cart_Store} = useStore()
+    const {Store, Cart_Store, Product_Store} = useStore()
     const [isFav, setIsFav] = useState(false)
     const [isInCart, setIsInCart] = useState(false)
     //console.log(el)
 
     useEffect(()=>{
-        console.log(typeof Store.user.fav)
+        //console.log(typeof Store.user.fav)
         if(Store.user.fav){
             if(Store.user.fav.includes(el.id)){
             setIsFav(true)
@@ -70,7 +70,9 @@ const Product_card:FC<Props> = observer(({el, index}) => {
     }
 
     const popupHandler = () =>{
+        Product_Store.setPopupCardId(el.id)
         Store.SetPopup("product-big-cart")
+
     }
 
     return (

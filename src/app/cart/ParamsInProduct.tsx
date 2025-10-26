@@ -4,7 +4,7 @@ import { useStore } from "@/store/storeProvidert";
 import { ColorName} from '@/api/db';
 import { observer } from 'mobx-react';
 import {IProduct, IcartItemParam} from "@/store/interfaces"
-//import Product_card  from '@/components/Product_card';
+
 
 interface Props {
   item:IProduct;
@@ -60,24 +60,6 @@ const ParamsInProduct:FC<Props> = observer(({item, params, itemIndex, paramsInde
       Cart_Store.updateParamsInDB(itemIndex, tempParams, paramsIndex)
     }
   },[selectedSize, selectedColor, Count])
-
-
-
-/*  useEffect(()=>{
-    const params = {"size":selectedSize, "color":selectedColor, "count":Count}
-    //console.log("useEf",itemIndex)
-    //if(!isSizeSelected&&!isCountDissable){
-    Store.updateParamsInDB(itemIndex, params, index)
-    //}
-  },[Count, selectedColor, selectedSize, Store, index, itemIndex])*/
-
-  //const inputCountHandler = (e:React.ChangeEvent<HTMLInputElement>) =>{
-  /*const inputCountHandler = (event:any) =>{
-    console.log(event.nativeEvent.data)
-    const a = (Count.toString)
-    setCount(event.nativeEvent.data)
-  }*/
-
 
 
   return (

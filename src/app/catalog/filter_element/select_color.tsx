@@ -19,7 +19,7 @@ const SelectColor:FC<Props> = observer (({color}) => {
     } else {
       setSelected(false)
     }
-  },[Product_Store.SelectedSizes])
+  },[Product_Store.SelectedColors])
 
   return (
     <div className="input-wrap">  
@@ -28,7 +28,7 @@ const SelectColor:FC<Props> = observer (({color}) => {
         <div className={`color-item color`+color}></div>
         {ColorName[color]}
       </label>
-     </div>                 
+    </div>                 
   )
 })
 

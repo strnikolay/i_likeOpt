@@ -1,5 +1,6 @@
 .certificates-wrap {
     display: flex;
+    flex-direction: column;
     margin-top: 1rem;
 
     .tabs {
@@ -41,6 +42,10 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.certificates-wrap .content {
+    display: flex;
 }
 
 .cert-img {

@@ -42,10 +42,11 @@
 }
 
 .four {
-    background: url('./outer4_2.png') no-repeat;
-    background-size: 100%;
-    background-position: center;
+    background: url('./outer4_2.png') center/100% no-repeat;
+    /*background-size: 100%;
+    background-position: center;*/
     height: 42rem; 
+    margin-right: -3rem;
 }
 
 .image-wrap {

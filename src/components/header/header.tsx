@@ -7,11 +7,18 @@ import Link from 'next/link';
 import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
 
-export const Header: React.FC = observer(() => {
+interface Props {
+  //isFixed:boolean;
+  //colors:Array<number>;
+}
+
+export const Header: React.FC<Props> = observer(() => {
 	const router = useRouter();
 	const {Store, Cart_Store} = useStore();
 	const [dropdown, setDropdown] = React.useState(false)
 	//const [mobilemenu, setMobilemenu] = React.useState(false)
+
+
 
   	return (
   	<div className="header">

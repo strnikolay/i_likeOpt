@@ -1,18 +1,15 @@
 'use client'
-
-import React from 'react';
+import React, {useEffect} from 'react';
 import { categoryList } from '@/api/db';
 import { useStore} from '@/store/storeProvidert'
 import { observer } from 'mobx-react';
 
-
-
 export const Category_select: React.FC = observer(() => {
   const {Product_Store} = useStore()
 
-  /*useEffect(()=>{
+  useEffect(()=>{
     Product_Store.FiltredByCategory(Product_Store.selectedCategory)
-  },[Product_Store.selectedCategory])*/
+  },[Product_Store.selectedCategory])
 
   return (
 	<div className="category-select-wrapper">

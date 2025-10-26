@@ -4,10 +4,14 @@ import {FC, useEffect, useState} from "react";
 import { useStore } from "@/store/storeProvidert";
 //import { brandList} from '@/api/db';
 import { observer } from 'mobx-react';
-import '../catalog.css'
+import './filter.css'
 import SelectBrand from "./select_brand";
 import SelectSize from "./select_size";
 import SelectColor from "./select_color";
+import {useLocalTheme } from 'css-vars-hook';
+import Price_range from "./price_range";
+import { Color_list } from "./list_color";
+import { Size_list } from "./list_size";
 
 
 //import { LoginForm } from "@/app/(login)/page";
@@ -19,43 +23,36 @@ interface Props {
 
 const Filter:FC<Props> = observer (({}) => {
   const {Product_Store} = useStore()
+
   const [brandsList, setBrandsList] = useState<Array<number>>([])
-  const [sizesList, setSizesList] = useState<Array<number>>([])
-  const [colorsList, setColorsList] = useState<Array<number>>([])
-  
 
   useEffect (()=>{
     setBrandsList(Product_Store.brandsList)
-  },[Product_Store.SelectedBrand])
-
-  useEffect (()=>{
-    setSizesList(Product_Store.sizesList)
-  },[Product_Store.SelectedSizes])
-
-  useEffect (()=>{
-    setColorsList(Product_Store.colorsList)
-  },[Product_Store.SelectedColors])
+  },[Product_Store.SelectedBrand, ])
 
   return (
-    <div className="filter-wrap">
+    <div className="filter">
+    <div className="filter-left-wrap">
+       
       <div className="brand-filter">
-        {brandsList.map((brand:number,i:number)=>(
-         <SelectBrand key={i} brand={brand}/>           
-        ))}
+        <div className="border-wrap">
+          {brandsList.map((brand:number,i:number)=>(
+            <SelectBrand key={i} brand={brand}/>           
+          ))}
+        </div>
+
       </div>
-      <div className="size-filter">
-        {sizesList.map((size:number,i:number)=>(
-         <SelectSize key={i} size={size}/>           
-        ))}
-      </div>
-      <div className="colors-filter">
-        {colorsList.map((color:number,i:number)=>(
-         <SelectColor key={i} color={color}/>           
-        ))}
-      </div>
-    
+
+      <Size_list/>
+      <Color_list/>
+    </div>
+    <div>
+      <Price_range/>
 
     </div>
+    
+    </div>
+
   )
 })
 

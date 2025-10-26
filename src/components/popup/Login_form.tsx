@@ -3,10 +3,8 @@
 import React from 'react';
 import "./Login_form.css";
 import Image from 'next/image';
-/*import { useRouter } from 'next/navigation'*/
 import { useStore } from "@/store/storeProvidert";
 import Link from 'next/link';
-//import { observer } from 'mobx-react';
 
 export default function LoginForm () {
 	const {Store} = useStore()	
@@ -14,7 +12,7 @@ export default function LoginForm () {
 
 	return (
 	<div className="login-wrapper">
-		<div className='background' onClick={() => Store.SetPopup('')}></div>
+		<div className='popup-background' onClick={() => Store.SetPopup('')}></div>
 		<div className="divshadow bounceIn">
 			<button onClick={() => Store.SetPopup('')} className="close" />
 			

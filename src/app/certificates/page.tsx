@@ -12,18 +12,22 @@ export default function Certificates() {
 
     return (
     <div className="certificates-wrap container">
-        <h1></h1>
+        <h1>Сертификаты соответствия</h1>
        <Tabs>
             <Tab title="iLike (АйЛайк)">
-                <button className="cert-img" onClick={enlargeHandle}>
-                    <div className="ilike-one"></div>
-                </button>
-                <button className="cert-img" onClick={enlargeHandle}>
-                    <div className="ilike-two"></div>
-                </button>                
+                <div className='content'>
+                    <button className="cert-img" onClick={enlargeHandle}>
+                        <div className="ilike-one"></div>
+                    </button>
+                    <button className="cert-img" onClick={enlargeHandle}>
+                        <div className="ilike-two"></div>
+                    </button>
+                </div>
+                
             </Tab>
 
             <Tab title="BigLif (БигЛиф)">
+                <div className='content'>
                     <button className="cert-img" onClick={enlargeHandle}>
                         <div className="biglif-one"></div>
                     </button>
@@ -33,21 +37,27 @@ export default function Certificates() {
                     <button className="cert-img" onClick={enlargeHandle}>
                         <div className="biglif-three"></div>
                     </button>
+                </div>    
             </Tab>
 
             <Tab title="Allegro (Аллегро)">
+                <div className='content'>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="allegro-one"></div>
                 </button>
+                </div>
             </Tab>
 
             <Tab title="Glora (Глора)">
+                <div className='content'>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="glora-one"></div>
                 </button>
+                </div>
             </Tab>
 
             <Tab title="Orhideja (Орхидея)">
+                <div className='content'>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="orh-one"></div>
                 </button>
@@ -59,16 +69,19 @@ export default function Certificates() {
                 </button>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="orh-four"></div>
-                </button>                                 
+                </button>
+                </div>                                 
             </Tab>
 
             <Tab title="Hовое время">
+                <div className='content'>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="nv-one"></div>
                 </button>
                 <button className="cert-img" onClick={enlargeHandle}>
                     <div className="nv-two"></div>
                 </button> 
+                </div>
             </Tab>
         </Tabs>
         

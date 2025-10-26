@@ -12,15 +12,18 @@ export const NewSales: React.FC = () => {
 
     return (
         <div id="slideshow" className="best-seller-wrap container">
-            <Image className='background' src="/main/best-back.png" width={1280} height={670} alt=''/>
+            {/*<Image className='background' src="/main/best-back.png" width={1280} height={670} alt=''/>*/}
             <div className='best-seller-title'></div>
-            <div className="best-seller-content new-sales-wrap">
+
+                <div className="best-seller-content">
                <Carousel className="new-sales-wrap" autoPlay centerMode centerSlidePercentage={7} showThumbs={false}>
                     {mockdata.map((el,index)=>
                         <Product_card key={index} el={el} index={index}/>
                     )}
                 </Carousel>
             </div>
+
+            
 
         </div>
     );

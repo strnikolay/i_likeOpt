@@ -90,11 +90,16 @@ const Catalog:FC = observer(() => {
 
   useEffect(()=>{
     Product_Store.FiltredByBrand(Product_Store.SelectedBrand)
-  },[Product_Store.SelectedBrand])
+  },[Product_Store.ProductFiltredByCategory, Product_Store.SelectedBrand])
 
   useEffect(()=>{
     Product_Store.FiltredBySizes(Product_Store.SelectedSizes)
-  },[Product_Store.SelectedSizes])
+  },[Product_Store.ProductFiltredByBrand, Product_Store.SelectedSizes])
+
+  useEffect(()=>{
+    //console.log(Product_Store.SelectedColors)
+    Product_Store.FiltredByColors(Product_Store.SelectedColors)
+  },[Product_Store.productFiltredBySizes, Product_Store.SelectedColors])
 
   return (
     <div className="catalog-wrap">
@@ -102,7 +107,10 @@ const Catalog:FC = observer(() => {
       <div className="catalog-content-wrap">
         <Filter/>
         <div className="catalog-product-wrap">
-          {Product_Store.productFiltredBySizes.map((el:IProduct,index:number)=>
+          {/*Product_Store.productFiltredBySizes.map((el:IProduct,index:number)=>
+            <Product_card key={index} el={el} index={index}/>
+          )*/}
+          {Product_Store.productFiltredByColors.map((el:IProduct,index:number)=>
             <Product_card key={index} el={el} index={index}/>
           )}
         </div>

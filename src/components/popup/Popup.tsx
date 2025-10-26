@@ -5,6 +5,7 @@ import "./Login_form.css";
 import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
 import LoginForm from './Login_form';
+import { Big_product_card } from './big-product-card/big-product-card';
 
 
 
@@ -24,7 +25,7 @@ export const Popup = observer (() => {
 	return (
 		<>
 			{Store.popup==="Login"&&<LoginForm/>}
-			{Store.popup==="product-big-cart"&&<LoginForm/>}
+			{Store.popup==="product-big-cart"&&<Big_product_card/>}
 		</>
   	);
 });

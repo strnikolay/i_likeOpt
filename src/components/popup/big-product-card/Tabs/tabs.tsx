@@ -20,6 +20,7 @@ type childrenProps = {
 const Tabs: React.FC<Props> = ({ children }) => {
   const [selectedTab, setSelectedTab] = useState(0)
   console.log(children)
+ 
   
   return (
     <div className="tabs">

@@ -1,3 +1,7 @@
+.header {
+    width: 98%;
+}
+
 
 .logo {
     position: relative;
@@ -13,6 +17,7 @@
     width: 33%;
     height: 4.5rem;
     border-radius: 1rem;
+    font-size: 1.4rem;
     flex-grow: 1;
     margin: 0 2rem;
     padding-left: 2rem;
@@ -44,7 +49,7 @@
             
 }
 .header-btn-wrap .phone-icon img {
-                padding: .7rem;
+    padding: .7rem;
 }
 
 .header-btn-wrap .contact-content{
@@ -74,16 +79,6 @@
     margin-top: 0.4rem;
     font-size: 1.4rem;
 }
-
-        
-
-        
-
-
-
-
-
-
 
 .dropdown-menu {
     position: absolute;
@@ -118,13 +113,13 @@
 
 .cart-btn-wrap {
     position: relative;
-    margin-left: 1rem;
-    width: 5.5rem;
+    margin-right: 1rem;
+    width: 5.6rem;
     height: 5rem;
 }
 .cart-btn-wrap .header-cart-sum {
         position: absolute;
-        left: 1rem;
+        left: .6rem;
         top:12%;
         color: #fff;
         padding: 0.5rem 1rem;

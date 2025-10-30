@@ -14,6 +14,7 @@ export interface IUser {
     email: string;
     password: string;
     company: string;
+    inn?:string;
     contact:IContact[];
     adress:IAdress[];
     orderHistory:IOrderParams[];

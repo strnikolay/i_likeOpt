@@ -6,10 +6,12 @@ export const About: React.FC = () => {
 
   return (
     <>
-    <div className="about-wrapper container">
+    <div className="about-section1 container">
+
+      <div className="first-double-wrap">
 
             <div className="about-item">
-                <Image src="/about/ico_about1.png" width={50} height={50} alt=""/>
+                <div className="icon one"></div>
                 <div className="about-content">              
                   <div className="about-title">15 ЛЕТ</div>
                   <div className="about-text" >
@@ -20,7 +22,7 @@ export const About: React.FC = () => {
 
 
             <div className="about-item">
-                <Image src="/about/ico_about2.png" width={50} height={50} alt=""/>
+                <div className="icon two"></div>
                 <div className="about-content">   
                   <div className="about-title">5 ЛЕТ</div>
                   <div className="about-text">
@@ -28,10 +30,11 @@ export const About: React.FC = () => {
                   </div>
                 </div>
             </div>
+      </div>
 
-
+      <div className="second-double-wrap">
             <div className="about-item">
-                <Image src="/about/ico_about3.png" width={50} height={50} alt=""/>
+                <div className="icon three"></div>
                 <div className="about-content"> 
                   <div className="about-title">XXL</div>
                   <div className="about-text">
@@ -42,7 +45,7 @@ export const About: React.FC = () => {
 
 
             <div className="about-item">
-                <Image src="/about/ico_about4.png" width={50} height={50} alt=""/>
+                <div className="icon four"></div>
 
                 <div className="about-content">              
                   <div className="about-title">1300+ КЛИЕНТОВ</div>
@@ -50,6 +53,7 @@ export const About: React.FC = () => {
                 </div>                
             </div>
 
+      </div>
     </div>
 
 
@@ -75,8 +79,56 @@ export const About: React.FC = () => {
                 <h3>В нашем ассортименте постоянно присутствует около 200 классических моделей бюстгальтеров, трусов и корректирующего белья под собственной маркой, а также хиты продаж от марок «Glora», «Orhideja», «Milavitsa», «Новое время», «Силуэт», «Элита». Также каждый сезон мы предлагаем более 10 новых fashion-линеек. Вы удачно расширите ассортимент и привлечете новых клиентов, которым безусловно понравится качество настоящего прибалтийского белья - по приятным ценам.</h3>
             </div>
         </div>
+
+        
       
     </div>
+
+    <div className="about-section3">
+      <div className="big-circle">
+        <div className="small-circle-wrap">
+          <figure className="ball">
+            <div className="ball-text">
+              Работать с нами удобно и выгодно!
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div className="section3-content">
+          <div className="line1">
+              <div className="left-item ">
+                <div className="icon one"></div>
+                Вы получите персонального менеджера, который будет сопровождать вас, помогать в выборе моделей, консультировать по всем вопросам сотрудничества
+              </div>
+              <div className="right-item ">
+                <div className="icon two"></div>
+                Мы готовы предоставить вам бесплатные образцы белья, чтобы вы могли оценить их качество
+              </div>
+          </div>
+          <div className="line2">
+              <div className="left-item">
+                <div className="icon three"></div>
+                Мы работаем, чтобы Вы могли зарабатывать. Наши условия дают вам возможность работать с высокой нормой прибыли
+              </div>
+              <div className="right-item">
+                <div className="icon four"></div>
+                Мы готовы осуществлять доставку по всей России либо до Вашей транспортной компании. При больших объемах доставка осуществляется бесплатно со склада в Москве
+              </div>
+          </div>
+          <div className="line3">
+              <div className="left-item">
+                <div className="icon five"></div>
+                Мы предоставляем сертификаты соответствия качества, декларации соответствия, протоколы испытаний и все необходимые документы на каждую модель белья
+              </div>
+              <div className="right-item">
+                <div className="icon six"></div>
+                Своим постоянным партнерам мы предлагаем удобные условия финансовых расчетов
+              </div>
+          </div>
+      </div>
+    </div>
+
+
     </>
   )
 }

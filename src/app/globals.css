@@ -10,16 +10,18 @@
     --foreground: #ededed;
   }
 }
-
-html	{
-		font-size: 10px;
+@media screen and (max-width: 1600px) {
+  html	{
+      font-size: calc(100vw / 1500 * 10);
+  }
 }
 
 @media screen and (max-width: 1240px) {
 	html{
 		font-size: calc(100vw / 1240 * 10);
 	}
-}  
+} 
+
 @media screen and (max-width: 1024px) {
 	html{
 	font-size: calc(100vw / 1024 * 10);
@@ -37,7 +39,6 @@ html	{
 	font-size: calc(100vw / 500 * 10);
 	}
 }
-
 
 body {  
   color: var(--foreground);
@@ -69,8 +70,8 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: #4ab7ae;
-  border-radius: 5px;
-  border: 0px solid #00000000;
+  border-radius: .5rem;
+  border: 0 solid #00000000;
 }
 
 

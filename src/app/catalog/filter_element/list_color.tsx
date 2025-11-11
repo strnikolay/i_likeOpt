@@ -4,6 +4,7 @@ import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
 import SelectColor from "./select_color";
 import {useLocalTheme } from 'css-vars-hook';
+import "./color.css"
 
 
 interface Props {

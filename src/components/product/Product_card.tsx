@@ -7,6 +7,8 @@ import {brandList, categoryList} from "@/api/db"
 import {IProduct} from "@/store/interfaces"
 import { useStore } from "@/store/storeProvidert";
 import { observer } from 'mobx-react';
+import { toast } from "react-toastify";
+
 
 
 interface Props {
@@ -50,10 +52,12 @@ const Product_card:FC<Props> = observer(({el, index}) => {
             //console.log("handler remove")
             Store.removeFav(el.id)
             setIsFav(false)
+            toast.success("Удалено из избранного")
         } else {
             //console.log("handler add")
             Store.addToFav(el.id)
             setIsFav(true)
+            toast.success("Добавлено в избранное")
         }
     }
 
@@ -62,10 +66,12 @@ const Product_card:FC<Props> = observer(({el, index}) => {
             //console.log("handler remove")
             Cart_Store.removeFromCart(el.id)
             setIsInCart(false)
+            toast.success("Удалено из корзины")
         } else {
             //console.log("handler add")
             Cart_Store.addToCart(el.id)
             setIsInCart(true)
+            toast.success("Добавлено в корзину")
         }
     }
 

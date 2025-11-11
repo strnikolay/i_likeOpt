@@ -3,6 +3,7 @@ import { Cuprum } from "next/font/google";
 import "./globals.css";
 import { StoreProvider } from "@/store/storeProvidert";
 import { Popup } from "@/components/popup/Popup";
+import { Toast } from "@/components/toast/toast";
 
 
 const cuprum = Cuprum({
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${cuprum.variable}`}>
         <StoreProvider>
         <Popup/>  
+        <Toast/>
         {children}
         </StoreProvider>
       </body>

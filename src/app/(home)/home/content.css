@@ -17,29 +17,29 @@
         border: 3px solid #e2e2e2;
 }
 
-    img {
+.main-content-wrap    img {
     object-fit: cover;
     }
 
-    .text {
+.main-content-wrap .text {
     position: absolute;
     width: 28.5rem;
     top: 6rem;
     left: 4rem; 
     }
 
-    h1,h2 {
+.main-content-wrap  h1,h2 {
         color: #46AAA2;
         font-size: 4.2rem;
         margin: 10px 0;
     }
 
-    .text p {
+.main-content-wrap .text p {
         color: #fff;
         font-size: 1.6rem;
     }
 
-    .arrow-wrap {
+.main-content-wrap .arrow-wrap {
         position: absolute;
         bottom: 3rem;
         left: 50%;
@@ -48,7 +48,7 @@
         flex-direction: column;
     }
 
-    .content-arrow {
+.main-content-wrap .content-arrow {
         margin: -0.6rem 0;
     }
 

@@ -95,6 +95,21 @@ class store {
     this.setUser(propsUser)
     localStorage.setItem("user", JSON.stringify(propsUser))
   }
+
+  toastType = "";
+  SetToastType(type:string){this.toastType = type}
+  
+  toastMsg = "";
+  SetToastMsg(msg:string){this.toastMsg = msg}
+
+  isToastShow = false;
+  SetIsToastShow(show:boolean){this.isToastShow = show}
+
+  ShowToastMsg (type:string, msg:string ) {
+    this.SetToastType(type)
+    this.SetToastMsg(msg)
+    this.SetIsToastShow(true)
+  }
 }
 
 export const Store = new store();

@@ -22,9 +22,9 @@
   }
 
 .login-wrapper  .divshadow {
-    width: 40rem;
+    width: 50rem;
     opacity: 1;
-    position: absolute;
+    position: relative;
     z-index: 102;
     background: #ffffff;
     border-radius: 1rem;

@@ -7,15 +7,23 @@ export const category1 = [
         cat: 0,
         brand: 0,
         desc: "Трусы-стринги из хлопковой ткани, кружевные сзади - с бесшовным краем, незаметным под одеждой.",
-        img: ["/catalog/0/ilike1.jpg"],
+        img: [
+            "/catalog/0/ilike1.jpg",
+            "/catalog/0/ilike2.jpg",
+            "/catalog/0/ilike3.jpg",
+            "/catalog/0/ilike4.png",
+            "/catalog/0/ilike5.png",
+        ],
         sticker: "ХИТ",
         price: 390,
         count: 20,
         sizes: [
-            {size:32, colors:[3,6]},
+            {size:32, colors:[1,2,3,4,5,6,7,8,9,10,11,12]},
             {size:34, colors:[2,3,4]},
             {size:40, colors:[0,8,9]},
-            {size:44, colors:[4,6,8]}
+            {size:44, colors:[1,2,3,4,5,6,7,8,9,10,11,12]},
+            {size:46, colors:[4,6,8]},
+            {size:48, colors:[4,6,8]},
         ]
     },
     {
@@ -23,7 +31,13 @@ export const category1 = [
         cat: 0,
         brand: 0,
         desc: "Трусы (хлопок) с высокой посадкой из хлопковой ткани , кружевные сзади - с плоским краем, незаметным под одеждой. Сзади полностью закрывают ягодицы.",
-        img: ["/catalog/0/ilike2.jpg"],
+        img: [
+            "/catalog/0/ilike2.jpg",
+            "/catalog/0/ilike3.jpg",
+            "/catalog/0/ilike4.png",
+            "/catalog/0/ilike6.png",
+            "/catalog/0/ilike7.jpg",
+        ],
         sticker: "ХИТ",
         price: 450,
         count: 5,
